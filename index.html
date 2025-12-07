@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon's Ascent 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Exo+2:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Load Three.js Global -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <!-- Load Assets -->
+    <script src="assets.js"></script>
+</head>
+
+<body>
+    <div id="ui-layer">
+        <div id="score-board">
+            <span>Score: <span id="score">0</span></span>
+            <span>Health: <span id="health">100%</span></span>
+            <div id="crosshair">+</div>
+        </div>
+        <div id="start-screen" class="screen">
+            <h1>Dragon's Ascent 3D</h1>
+            <p>Dimensions have shattered. The skies await.</p>
+            <p style="font-size: 1rem; color: #aaa; margin-top: -1.5rem; margin-bottom: 2rem;">
+                WASD = Move | SPACE/SHIFT = Up/Down<br>
+                Mouse = Look | Click = Shoot
+            </p>
+            <button id="start-btn">Enter 3D Realm</button>
+        </div>
+        <div id="game-over-screen" class="screen hidden">
+            <h1>Fallen</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="restart-btn">Rise Again</button>
+        </div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <!-- Load Game Logic (No Module) -->
+    <script src="game.js"></script>
+</body>
+
+</html>

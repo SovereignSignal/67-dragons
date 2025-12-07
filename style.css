@@ -1,0 +1,128 @@
+/* Keep most styles, just add crosshair */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    background-image: url('assets/sky.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Exo 2', sans-serif;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#score-board {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    pointer-events: none;
+    text-align: center;
+    line-height: 20px;
+    /* Center in screen not scoreboard */
+    position: fixed;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* More transparent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(8px);
+    /* smooth blur */
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ffaa00;
+    text-shadow: 0 0 20px #ff4400;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-align: center;
+    line-height: 1.5;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(45deg, #ff4400, #ffaa00);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 68, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 68, 0, 0.8);
+}
+
+button:active {
+    transform: scale(0.95);
+}
